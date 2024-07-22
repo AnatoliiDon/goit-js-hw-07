@@ -25,34 +25,19 @@ const images = [
   }
 ];
 
+const createGalleryItem = pictureInfo => {
 const galleryItemEl = document.createElement('li');
 galleryItemEl.classList.add('gallery-item', 'js-gallery-item');
 
 const galleryImg = document.createElement('img');
 galleryImg.classList.add('gallery-img', 'js-gallery-img');
-galleryImg.src = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260';
-galleryImg.alt = 'White and Black Long Fur Cat';
-galleryItemEl.append(galleryImg);
+galleryImg.src = pictureInfo.url;
+galleryImg.alt = pictureInfo.alt;
+  galleryItemEl.append(galleryImg);
+  
+  return galleryItemEl;
+}
 
-const galleryItemEl1 = document.createElement('li');
-galleryItemEl1.classList.add('gallery-item', 'js-gallery-item');
-
-const galleryImg1 = document.createElement('img');
-galleryImg1.classList.add('gallery-img', 'js-gallery-img');
-galleryImg1.src = 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260';
-galleryImg1.alt = 'Orange and White Koi Fish Near Yellow Koi Fish';
-galleryItemEl1.append(galleryImg1);
-
-const galleryItemEl2 = document.createElement('li');
-galleryItemEl2.classList.add('gallery-item', 'js-gallery-item');
-
-const galleryImg2 = document.createElement('img');
-galleryImg2.classList.add('gallery-img', 'js-gallery-img');
-galleryImg2.src = 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260';
-galleryImg2.alt = 'Group of Horses Running';
-galleryItemEl2.append(galleryImg2);
-
-// вставка
 
 const galleryListEl = document.querySelector('.gallery');
-galleryListEl.append(galleryItemEl, galleryItemEl1, galleryItemEl2);
+galleryListEl.append(createGalleryItem(images[3]), createGalleryItem(images[1]), createGalleryItem(images[4]));
