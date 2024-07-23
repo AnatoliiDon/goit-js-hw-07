@@ -16,7 +16,7 @@ const onFormSubmit = event => {
     };
     console.log(formData);
     }
-
+  formEl.reset();
   
 }
 
